@@ -13,5 +13,10 @@ if __name__ == "__main__":
         print("❌ YOUTUBE_URL is missing")
     else:
         print("▶️ Đang tải video...")
-        path, title, desc = download_video(youtube_url)
-        print("✅ Tải xong:", path)
+        try:
+            path, title, desc = download_video(youtube_url)
+            print("✅ Tải xong:", path)
+            print("🎬 Tiêu đề:", title)
+            print("📝 Mô tả:", desc[:200], "...")
+        except Exception as e:
+            print("❌ Lỗi khi tải video:", str(e))
