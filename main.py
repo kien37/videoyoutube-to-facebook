@@ -1,20 +1,19 @@
-from pytube import YouTube
 import os
-import pytube.request
-
-# Gán User-Agent để tránh lỗi 400
-pytube.request.default_range_size = 9437184
-pytube.request.user_agent = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/114.0.0.0 Safari/537.36"
-)
+import yt_dlp
 
 def download_video(url):
-    yt = YouTube(url)
-    stream = yt.streams.filter(progressive=True, file_extension='mp4').get_highest_resolution()
-    file_path = stream.download(filename='video.mp4')
-    return file_path, yt.title, yt.description
+    ydl_opts = {
+        'outtmpl': 'video.mp4',
+        'format': 'bestvideo+bestaudio/best',
+        'merge_output_format': 'mp4',
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(url, download=True)
+        title = info.get('title', 'No Title')
+        description = info.get('description', '')
+    
+    return 'video.mp4', title, description
 
 if __name__ == "__main__":
     youtube_url = os.getenv("YOUTUBE_URL")
