@@ -5,8 +5,9 @@ def download_video(url):
     ydl_opts = {
         'cookiefile': 'cookies.txt',
         'outtmpl': 'video.mp4',
-        'format': '18',  # 👉 Tải định dạng 360p chuẩn
+        'format': '18',  # Định dạng 360p
         'merge_output_format': 'mp4',
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',  # giả làm trình duyệt thật
         'quiet': False,
         'nocheckcertificate': True,
         'noplaylist': True,
