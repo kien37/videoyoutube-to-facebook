@@ -1,5 +1,14 @@
 from pytube import YouTube
 import os
+import pytube.request
+
+# Gán User-Agent để tránh lỗi 400
+pytube.request.default_range_size = 9437184
+pytube.request.user_agent = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/114.0.0.0 Safari/537.36"
+)
 
 def download_video(url):
     yt = YouTube(url)
