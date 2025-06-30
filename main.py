@@ -13,8 +13,7 @@ def download_video(url):
         info = ydl.extract_info(url, download=True)
         title = info.get('title', 'No Title')
         description = info.get('description', '')
-    
-    return 'video.mp4', title, description
+        return 'video.mp4', title, description  # ✅ Trả về kết quả trong khối with
 
 if __name__ == "__main__":
     youtube_url = os.getenv("YOUTUBE_URL")
@@ -24,4 +23,3 @@ if __name__ == "__main__":
         print("▶️ Đang tải video...")
         path, title, desc = download_video(youtube_url)
         print("✅ Tải xong:", path)
-)
