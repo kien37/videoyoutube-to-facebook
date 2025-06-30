@@ -1,10 +1,11 @@
-__Secure-1PAPISID	_pmo3zERl_GsHoo3/AuRuDdNprFMhg_FEh	.google.com	/	2026-08-01T14:35:36.190Z	51		✓				High	
-__Secure-1PAPISID	pAeIBeKAsuZDRaRy/AhnBrIY1buHnMxzoa	.youtube.com	/	2026-07-21T15:16:57.150Z	51		✓				High	
-__Secure-1PSID	g.a000ygiH9YYiDpb5tZ79kghZVuQF5Khd6CJeY7T9BWGYdh22tkbJneUgWKgcyQ4a35fhR1xGAgACgYKARsSARISFQHGX2Mi_hCCmgMlvnYHVMLc4-JimxoVAUF8yKpCqL65PfyCeSxBT-erND3e0076	.google.com	/	2026-08-01T14:35:36.191Z	167	✓	✓				High	
-__Secure-1PSID	g.a000yAiH9XIV0fFj1mqAqN0WiJuC69lWKbnm3ZYt4aKNF-nthwWftpR4FxqWFSt4D20v2WIN2AACgYKAVESARISFQHGX2MiZPXi15Ad-MSJdFW7ip3pthoVAUF8yKryj5mI_JzgnvN7eRrQHslC0076	.youtube.com	/	2026-07-21T15:16:57.151Z	167	✓	✓				High	
-__Secure-1PSIDCC	AKEyXzU08kaveK5HzfD8Ya7757gEm3FNuGlPn4ikmtoKlpu8S89scQKjmDL8b_54jxiGwAu2WQ	.youtube.com	/	2026-06-30T21:16:35.691Z	90	✓	✓				High	
-__Secure-1PSIDCC	AKEyXzV8_YUA3krMckgwnYDjSbiTyiVaLWyi29TwraLF1JWNdAqeFX7Hxfj3BEC_K3z2DB9ix2A	.google.com	/	2026-06-30T21:14:56.769Z	91	✓	✓				High	
-__Secure-1PSIDTS	sidts-CjEB5H03P6Ux_0lhazogEVV1SdDnpiDduJ_kjTCRxL91UzkU783hmsusu3ztyY5HwgsWEAA	.google.com	/	2026-06-30T21:14:56.769Z	93	✓	✓				High	
-__Secure-1PSIDTS	sidts-CjEB5H03P3xD_wLN-pJoLUAH7Cxi4QVBqAsNUQYM9R6ivi1rLAvtpzYIgxZz3nAoDqVmEAA	.youtube.com	/	2026-06-30T21:16:35.691Z	93	✓	✓				High	
-__Secure-3PAPISID	pAeIBeKAsuZDRaRy/AhnBrIY1buHnMxzoa	.youtube.com	/	2026-07-21T15:16:57.150Z	51		✓	None			High	
-__Secure-3PAPISID	_pmo3zERl_GsHoo3/AuRuDdNprFMhg_FEh	.google.com	/	2026-08-01T14:35:36.190Z	51		✓	None			High	
+# Netscape HTTP Cookie File
+.youtube.com	TRUE	/	FALSE	1789911417	__Secure-1PAPISID	pAeIBeKAsuZDRaRy/AhnBrIY1buHnMxzoa
+.google.com	TRUE	/	FALSE	1789911336	__Secure-1PAPISID	_pmo3zERl_GsHoo3/AuRuDdNprFMhg_FEh
+.youtube.com	TRUE	/	TRUE	1789911417	__Secure-1PSID	g.a000yAiH9XIV0fFj1mqAqN0WiJuC69lWKbnm3ZYt4aKNF-nthwWftpR4FxqWFSt4D20v2WIN2AACgYKAVESARISFQHGX2MiZPXi15Ad-MSJdFW7ip3pthoVAUF8yKryj5mI_JzgnvN7eRrQHslC0076
+.google.com	TRUE	/	TRUE	1789911336	__Secure-1PSID	g.a000ygiH9YYiDpb5tZ79kghZVuQF5Khd6CJeY7T9BWGYdh22tkbJneUgWKgcyQ4a35fhR1xGAgACgYKARsSARISFQHGX2Mi_hCCmgMlvnYHVMLc4-JimxoVAUF8yKpCqL65PfyCeSxBT-erND3e0076
+.youtube.com	TRUE	/	TRUE	1789911395	__Secure-1PSIDCC	AKEyXzU08kaveK5HzfD8Ya7757gEm3FNuGlPn4ikmtoKlpu8S89scQKjmDL8b_54jxiGwAu2WQ
+.google.com	TRUE	/	TRUE	1789911296	__Secure-1PSIDCC	AKEyXzV8_YUA3krMckgwnYDjSbiTyiVaLWyi29TwraLF1JWNdAqeFX7Hxfj3BEC_K3z2DB9ix2A
+.google.com	TRUE	/	TRUE	1789911296	__Secure-1PSIDTS	sidts-CjEB5H03P6Ux_0lhazogEVV1SdDnpiDduJ_kjTCRxL91UzkU783hmsusu3ztyY5HwgsWEAA
+.youtube.com	TRUE	/	TRUE	1789911395	__Secure-1PSIDTS	sidts-CjEB5H03P3xD_wLN-pJoLUAH7Cxi4QVBqAsNUQYM9R6ivi1rLAvtpzYIgxZz3nAoDqVmEAA
+.youtube.com	TRUE	/	FALSE	1789911417	__Secure-3PAPISID	pAeIBeKAsuZDRaRy/AhnBrIY1buHnMxzoa
+.google.com	TRUE	/	FALSE	1789911336	__Secure-3PAPISID	_pmo3zERl_GsHoo3/AuRuDdNprFMhg_FEh
