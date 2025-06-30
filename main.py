@@ -6,6 +6,7 @@ def download_video(url):
         'outtmpl': 'video.mp4',
         'format': 'bestvideo+bestaudio/best',
         'merge_output_format': 'mp4',
+        'cookiefile': 'cookies.txt',  # Sử dụng cookie để vượt xác minh
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -23,3 +24,4 @@ if __name__ == "__main__":
         print("▶️ Đang tải video...")
         path, title, desc = download_video(youtube_url)
         print("✅ Tải xong:", path)
+)
