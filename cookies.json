@@ -1,15 +1,93 @@
 [
-  {
-    "domain": ".youtube.com",
-    "expirationDate": 1785890906.448517,
-    "hostOnly": false,
-    "httpOnly": false,
-    "name": "PREF",
-    "path": "/",
-    "sameSite": null,
-    "secure": true,
-    "session": false,
-    "storeId": null,
-    "value": "tz=Asia.Bangkok&f4=4000000"
-  }
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1785931577.524988,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "__Secure-3PSID",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "g.a000ygiH9YYiDpb5tZ79kghZVuQF5Khd6CJeY7T9BWGYdh22tkbJLGnGXSV8Cq7T8boHjYSpBQACgYKAbYSARISFQHGX2MiRhe_J4B_PzhYLcgElqivQRoVAUF8yKq8OO-dYu1azCe96Q__IJYj0076"
+    },
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1782909982.457351,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "__Secure-1PSIDTS",
+        "path": "/",
+        "sameSite": null,
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "sidts-CjEB5H03PxdBVahXG9Fv47dJ8iz9WQLnDe5e0sU2paYhmQhZ9pG7srzv8UG0wcc5X9mqEAA"
+    },
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1785931577.524935,
+        "hostOnly": false,
+        "httpOnly": false,
+        "name": "__Secure-3PAPISID",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "_pmo3zERl_GsHoo3/AuRuDdNprFMhg_FEh"
+    },
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1782910389.664456,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "__Secure-3PSIDCC",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "AKEyXzXZ62_7FVr2z4_0oba7BoXtPNN59IR1wkBPGwblB_Gn-z7oa2rRufDYVZOYLZWYfS8_"
+    },
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1782909982.457615,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "__Secure-3PSIDTS",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "sidts-CjEB5H03PxdBVahXG9Fv47dJ8iz9WQLnDe5e0sU2paYhmQhZ9pG7srzv8UG0wcc5X9mqEAA"
+    },
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1785934379.216984,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "LOGIN_INFO",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "AFmmF2swRAIgN7XMJAMEkHr29nvyUeXHbwd6Vy4D9rYmvImvsDV3j5sCIDhWp0Dgtyn9TbsXrdEbS6wCAC_8erQfIvjzMRtPOyp_:QUQ3MjNmemM0a0RKWUc2RUpKQlhUMU1WUV9GLW54a1VqVERsdXRQOVFqWnVUejZTdnhWeGdWOURpRGwwYkZfV250VldsZ3E2ZGVVa3hfeURvTEZXSm5yeVZWZnlEaUJBU1dYcWN4TUlfajVrNEJsTDh5Q2NCaFVpNGdBb01BZ0RULXNWcVJyLWtvNTVBRHFaZ0xVV3VDQWlUY1ZkMFRPSkl3"
+    },
+    {
+        "domain": ".youtube.com",
+        "expirationDate": 1785934386.099371,
+        "hostOnly": false,
+        "httpOnly": false,
+        "name": "PREF",
+        "path": "/",
+        "sameSite": null,
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "f4=4000000&tz=Asia.Bangkok"
+    }
 ]
