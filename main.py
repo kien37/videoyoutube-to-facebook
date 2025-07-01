@@ -1,59 +1,47 @@
 import os
-import requests
 from yt_dlp import YoutubeDL
 
-# Lấy access token và Page ID từ biến môi trường (hoặc thay trực tiếp nếu test)
-FB_PAGE_TOKEN = os.getenv("FB_PAGE_TOKEN") or "THAY_BANG_PAGE_TOKEN_CUA_BAN"
-FB_PAGE_ID = os.getenv("FB_PAGE_ID") or "THAY_BANG_PAGE_ID_CUA_BAN"
+# Đường dẫn tới file cookie đã xuất từ trình duyệt (định dạng Netscape)
+COOKIE_FILE = 'cookies.txt'
 
-# Hàm tải video YouTube
+# Hàm tải video từ YouTube
 def download_video(url):
     ydl_opts = {
-        'cookiefile': 'cookies.txt',
-        'outtmpl': 'downloads/%(title)s.%(ext)s',
-        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4',
+        'outtmpl': 'downloaded_video.%(ext)s',
+        'format': 'bestvideo+bestaudio/best',
         'merge_output_format': 'mp4',
+        'cookies': COOKIE_FILE,
         'quiet': False,
-        'noplaylist': True
     }
 
     with YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
-        title = info.get("title")
-        description = info.get("description", "")
-        file_path = ydl.prepare_filename(info)
-        return file_path, title, description
+        filename = ydl.prepare_filename(info)
+        title = info.get('title', 'No Title')
+        description = info.get('description', '')
 
-# Hàm đăng video lên Facebook Page
-def upload_to_facebook(video_path, title, description):
-    upload_url = f"https://graph-video.facebook.com/v18.0/{FB_PAGE_ID}/videos"
-    params = {
-        "access_token": FB_PAGE_TOKEN,
-        "title": title,
-        "description": description
-    }
+        return filename, title, description
 
-    with open(video_path, "rb") as f:
-        files = {
-            "source": f
-        }
-        print("📤 Đang tải video lên Facebook...")
-        response = requests.post(upload_url, data=params, files=files)
+# ------------------------------------
+# ▶️ Phần kiểm tra tải video
 
-    if response.status_code == 200:
-        video_id = response.json().get("id")
-        print(f"✅ Đăng video thành công! ID: {video_id}")
-    else:
-        print("❌ Lỗi khi đăng video:")
-        print(response.text)
-
-# === CHẠY CHÍNH ===
 if __name__ == "__main__":
-    youtube_url = input("🔗 Dán link YouTube: ").strip()
+    import sys
 
+    # Cách dùng: python main.py "https://youtube.com/..."
+    if len(sys.argv) != 2:
+        print("❌ Bạn cần cung cấp URL YouTube.\n📌 Ví dụ: python main.py https://www.youtube.com/watch?v=ID")
+        sys.exit(1)
+
+    youtube_url = sys.argv[1]
+    print(f"🔽 Đang tải video từ: {youtube_url}")
+    
     try:
-        video_path, title, description = download_video(youtube_url)
-        print(f"📥 Đã tải video: {title}")
-        upload_to_facebook(video_path, title, description)
+        path, title, desc = download_video(youtube_url)
+        if os.path.exists(path):
+            print(f"✅ Video đã tải về thành công tại: {path}")
+            print(f"🎥 Tiêu đề: {title}")
+        else:
+            print("❌ Không tìm thấy file video sau khi tải.")
     except Exception as e:
-        print("❌ Lỗi:", str(e))
+        print("❌ Lỗi khi tải video:", str(e))
