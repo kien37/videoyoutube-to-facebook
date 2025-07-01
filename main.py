@@ -1,47 +1,37 @@
 import os
 from yt_dlp import YoutubeDL
 
-# Đường dẫn tới file cookie đã xuất từ trình duyệt (định dạng Netscape)
-COOKIE_FILE = 'cookies.txt'
+# 🔧 Cấu hình thư mục lưu video
+DOWNLOAD_DIR = "downloads"
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-# Hàm tải video từ YouTube
+# 📌 Gán sẵn link YouTube cần tải (dùng để test)
+youtube_url = "https://www.youtube.com/watch?v=oDv2abXHthY"
+
+# 🔐 Đường dẫn đến file cookies (đã xuất từ Cookie-Editor)
+COOKIES_FILE = "cookies.txt"
+
 def download_video(url):
     ydl_opts = {
-        'outtmpl': 'downloaded_video.%(ext)s',
-        'format': 'bestvideo+bestaudio/best',
-        'merge_output_format': 'mp4',
-        'cookies': COOKIE_FILE,
-        'quiet': False,
+        "cookiefile": COOKIES_FILE,
+        "outtmpl": os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s"),
+        "quiet": False,
+        "format": "bestvideo+bestaudio/best",
+        "merge_output_format": "mp4",
     }
 
     with YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
+        title = info.get("title")
+        description = info.get("description")
         filename = ydl.prepare_filename(info)
-        title = info.get('title', 'No Title')
-        description = info.get('description', '')
-
+        print(f"✅ Đã tải: {filename}")
         return filename, title, description
 
-# ------------------------------------
-# ▶️ Phần kiểm tra tải video
-
 if __name__ == "__main__":
-    import sys
-
-    # Cách dùng: python main.py "https://youtube.com/..."
-    if len(sys.argv) != 2:
-        print("❌ Bạn cần cung cấp URL YouTube.\n📌 Ví dụ: python main.py https://www.youtube.com/watch?v=ID")
-        sys.exit(1)
-
-    youtube_url = sys.argv[1]
-    print(f"🔽 Đang tải video từ: {youtube_url}")
-    
+    print(f"▶️ Bắt đầu tải video từ: {youtube_url}")
     try:
         path, title, desc = download_video(youtube_url)
-        if os.path.exists(path):
-            print(f"✅ Video đã tải về thành công tại: {path}")
-            print(f"🎥 Tiêu đề: {title}")
-        else:
-            print("❌ Không tìm thấy file video sau khi tải.")
+        print(f"\n🎉 Hoàn tất tải video: {title}")
     except Exception as e:
-        print("❌ Lỗi khi tải video:", str(e))
+        print(f"❌ Lỗi khi tải video: {e}")
