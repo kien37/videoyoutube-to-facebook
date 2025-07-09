@@ -1,25 +1,19 @@
 import requests
 import os
 
-# 📌 Page Access Token và Page ID (bạn đã cung cấp)
+# 📌 Page Access Token và Page ID
 ACCESS_TOKEN = "EAAKHZB2IZBzMsBPCJhA06AgZBAzd6DWPdwoFwZAX1fCPAUayBjnty7ZApUjWWPOdxO04dPhhKWOAlyfClMpURAWJwiByXJkzfSyD7UpXh3AjnEP9kIOGOjsKNu2c2fXL9ajOtZAQly2EqAspJZAKdwAk7DzkjOqGI2LagaC4qrvdgJ3ZBGIpVlhdhdsaswDBr3TLSs3LXccY8HLbBKxYYnvWYhB6f3DNNZAHxsZCa2jgKzkn8tLDrsPzqXX9ClBQZDZD"
 PAGE_ID = "174117579302558"
-
-# 📁 Tự động tìm file video mới nhất trong thư mục downloads
 DOWNLOAD_DIR = "downloads"
 
-def get_latest_video_file():
-    files = [os.path.join(DOWNLOAD_DIR, f) for f in os.listdir(DOWNLOAD_DIR) if f.endswith(".mp4")]
-    if not files:
-        raise Exception("Không tìm thấy video trong thư mục downloads")
-    return max(files, key=os.path.getctime)
-
-# 📤 Upload video lên Facebook
 def upload_video():
-    video_path = get_latest_video_file()
+    video_path = os.path.join(DOWNLOAD_DIR, "video_compressed.mp4")
+    if not os.path.exists(video_path):
+        print(f"❌ Không tìm thấy file nén: {video_path}")
+        return
+
     video_title = os.path.splitext(os.path.basename(video_path))[0]
     video_description = f"Đăng tự động: {video_title}"
-
     print(f"🚀 Đang tải video: {video_title}")
 
     with open(video_path, 'rb') as video_file:
@@ -34,8 +28,6 @@ def upload_video():
         }
 
         response = requests.post(url, params=params, files=files)
-
-        # 📋 Ghi log mã phản hồi HTTP
         print(f"📋 Mã phản hồi HTTP: {response.status_code}")
         print("🧾 Phản hồi từ Facebook:", response.text)
 
@@ -43,8 +35,8 @@ def upload_video():
             data = response.json()
         except Exception as e:
             print(f"❌ Lỗi khi phân tích phản hồi JSON: {e}")
-            with open("fb_response_debug.txt", "w", encoding="utf-8") as debug_file:
-                debug_file.write(response.text)
+            with open("fb_response_debug.txt", "w", encoding="utf-8") as f:
+                f.write(response.text)
             print("📁 Phản hồi đã được lưu vào fb_response_debug.txt")
             return
 
