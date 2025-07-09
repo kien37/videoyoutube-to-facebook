@@ -34,6 +34,8 @@ def upload_video():
         }
 
         response = requests.post(url, params=params, files=files)
+	print("🧾 Phản hồi từ Facebook:", response.text)
+
         data = response.json()
 
         if 'id' in data:
