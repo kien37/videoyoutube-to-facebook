@@ -1,14 +1,14 @@
 import os
 from yt_dlp import YoutubeDL
 
-# 🔧 Cấu hình thư mục lưu video
+# 📁 Tạo thư mục lưu video
 DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-# 📌 Gán sẵn link YouTube cần tải (dùng để test)
-youtube_url = "https://www.youtube.com/watch?v=oDv2abXHthY"
+# 📌 Link YouTube cần tải (có thể thay đổi bằng biến môi trường)
+youtube_url = os.environ.get("YOUTUBE_URL", "https://www.youtube.com/watch?v=oDv2abXHthY")
 
-# 🔐 Đường dẫn đến file cookies (đã xuất từ Cookie-Editor)
+# 🔐 File cookies (định dạng Netscape, được tạo từ Cookie-Editor)
 COOKIES_FILE = "cookies.txt"
 
 def download_video(url):
